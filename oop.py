@@ -2,28 +2,25 @@
 
 class PartyAnimal:
     x = 0
+    name = ""
 
-    def __init__(self):
-        print("I am constructed")
+    def __init__(self, z):
+      self.name = z
+      print(self.name, " constructed")
 
     # constructor
     def party(self):
-        self.x = self.x + 1
-        print("So far ", self.x)
+      self.x = self.x + 1
+      print(self.name, " party count ", self.x)
     
     # destructor
     def __del__(self):
         print("I am destructed", self.x)
 
 # create instance and assign it
-an = PartyAnimal()
+s = PartyAnimal("Sally")
+s.party()
 
-print("Type ", type(an))
-print("Dir ", dir(an))
-
-an.party()
-an.party()
-an.party()
-
-an = 42
-print("an contains ", an)
+j = PartyAnimal("John")
+j.party()
+s.party()
